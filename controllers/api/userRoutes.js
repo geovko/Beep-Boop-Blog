@@ -1,6 +1,8 @@
 const router = require("express").Router();
 const { User, Post, Comment } = require("../../models");
 
+// api/users/
+
 // GET all users
 router.get("/", async (req, res) => {
   try {
@@ -33,6 +35,15 @@ router.get("/:id", async (req, res) => {
 
 // Create a new user
 router.post("/", async (req, res) => {
+  // Expected Input Example:
+  /*
+  {
+		"name": "Jesse",
+		"email": "Jekyll@hotmail.com",
+		"password": "idontknow888"
+	}
+  */
+
   try {
     const userData = await User.create(req.body);
 

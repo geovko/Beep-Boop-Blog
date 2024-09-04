@@ -1,5 +1,8 @@
 const router = require("express").Router();
 const { User, Post, Comment } = require("../../models");
+const withAuth = require("../../utils/auth");
+
+// api/comments/
 
 // GET all comments
 router.get("/", async (req, res) => {
@@ -32,7 +35,14 @@ router.get("/:id", async (req, res) => {
 });
 
 // Create a comment
-router.post("/", withAuth, async (req, res) => {
+router.post("/:id", withAuth, async (req, res) => {
+  // Expected Input:
+  /* 
+  {
+		"content": "Same, bud."
+	}
+  */
+
   const now = Date(Date.now()).split(" ");
   try {
     const newComment = await Comment.create({

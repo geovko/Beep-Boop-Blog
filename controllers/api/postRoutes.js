@@ -2,6 +2,8 @@ const router = require("express").Router();
 const { User, Post, Comment } = require("../../models");
 const withAuth = require("../../utils/auth");
 
+// api/posts/
+
 // GET all posts
 router.get("/", async (req, res) => {
   try {
@@ -34,8 +36,16 @@ router.get("/:id", async (req, res) => {
 
 // Create a post
 router.post("/", withAuth, async (req, res) => {
-  const now = Date(Date.now()).split(" ");
+  // Expected Input:
+  /*
+	{
+		"title": "Something",
+		"content": "I don't care anymore."
+	}
+  */
+
   try {
+    const now = Date(Date.now()).split(" ");
     const newPost = await Post.create({
       ...req.body,
       user_id: req.session.user_id,
