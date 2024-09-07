@@ -5,10 +5,7 @@
       <h2>
         <a href="/posts/{{post.id}}">{{post.name}}</a>
       </h2>
-      <p>Created by
-        {{post.user.name}}
-        on
-        {{post.dateCreated}}</p>
+      <p>By {{post.user.name}} [{{post.dateCreated}}]</p>
     </div>
     <div class="col-md-7">
       <p>
@@ -20,15 +17,11 @@
         Comments:
       </h3>
       {{#each comments as |comment|}}
-        <div>
-          <p>Created by
-            {{comment.user.name}}
-            on
-            {{comment.dateCreated}}</p>
-        </div>
         <div class="col-md-7">
-          <p>
-            {{comment.content}}</p>
+          <p> {{content}}</p>
+        </div>
+        <div>
+          <p>By {{user.name}} [{{dateCreated}}]</p>
         </div>
       {{/each}}
     </div>
