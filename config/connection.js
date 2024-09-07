@@ -1,5 +1,7 @@
 const Sequelize = require("sequelize");
-require("dotenv").config();
+const path = require("path");
+require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
+// require("dotenv").config();
 
 const sequelize = process.env.DB_URL
   ? new Sequelize(process.env.DB_URL)
@@ -9,7 +11,8 @@ const sequelize = process.env.DB_URL
       process.env.DB_PASSWORD,
       {
         host: "localhost",
-        port: 3306,
+        // port: 3306,
+        port: 5432,
         dialect: "postgres",
       }
     );
