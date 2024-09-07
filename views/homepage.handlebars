@@ -5,7 +5,7 @@
       <h2>
         <a href="/posts/{{post.id}}">{{post.name}}</a>
       </h2>
-      <p>By {{post.user.name}} [{{post.dateCreated}}]</p>
+      <p>By {{user.name}} - {{dateCreated}}</p>
     </div>
     <div class="col-md-7">
       <p>
@@ -21,7 +21,7 @@
           <p> {{content}}</p>
         </div>
         <div>
-          <p>By {{user.name}} [{{dateCreated}}]</p>
+          <p>By {{user.name}} - {{dateCreated}}</p>
         </div>
       {{/each}}
     </div>

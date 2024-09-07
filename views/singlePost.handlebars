@@ -1,7 +1,7 @@
 <div class="text-center">
   <h2>{{title}}</h2>
   <p>{{content}}</p>
-  <p>By {{user.name}} [{{dateCreated}}]</p>
+  <p>By {{user.name}} - {{dateCreated}}</p>
 </div>
 
 {{#each comments as |comment|}}
@@ -9,7 +9,7 @@
     <div class="col-md-7">
       <p> {{content}}</p>
     </div>
-    <p>By {{user.name}} [{{dateCreated}}]</p>
+    <p>By {{user.name}} - {{dateCreated}}</p>
   </div>
 {{/each}}
 
