@@ -6,7 +6,7 @@ router.get("/", async (req, res) => {
     // Get all posts, sorted by name
     const postData = await Post.findAll({
       attributes: { exclude: ["password"] },
-      order: [["name", "ASC"]],
+      order: [["title", "ASC"]],
     });
 
     // Serialize data
