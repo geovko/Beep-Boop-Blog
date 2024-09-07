@@ -1,7 +1,7 @@
 const logout = async () => {
   const response = await fetch("/api/users/logout", {
     method: "POST",
-    headers: { "Content-Type": "text/html" },
+    headers: { "Content-Type": "application/json" },
   });
 
   if (response.ok) {
