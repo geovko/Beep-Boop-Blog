@@ -13,7 +13,8 @@ const loginFormHandler = async (event) => {
       headers: { "Content-Type": "text/html" },
     });
 
-    console.log("Login Input: " + response);
+    console.log("Login Input:");
+    console.log(response);
 
     if (response.ok) {
       // If successful, redirect the browser to the profile page
@@ -38,7 +39,8 @@ const signupFormHandler = async (event) => {
       headers: { "Content-Type": "text/html" },
     });
 
-    console.log("Signup Input: " + response);
+    console.log("Signup Input:");
+    console.log(response);
 
     if (response.ok) {
       document.location.replace("/dashboard");
