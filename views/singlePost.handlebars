@@ -7,9 +7,9 @@
 {{#each comments as |comment|}}
   <div class="text-center">
     <div class="col-md-7">
-      <p> {{content}}</p>
+      <p> {{comment.content}}</p>
     </div>
-    <p>{{comment.user.name}} - {{comment.dateCreated}}</p>
+    <p>{{user.name}} - {{dateCreated}}</p>
   </div>
 {{/each}}
 
