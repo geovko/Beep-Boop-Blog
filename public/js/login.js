@@ -10,7 +10,7 @@ const loginFormHandler = async (event) => {
     const response = await fetch("/api/users/login", {
       method: "POST",
       body: JSON.stringify({ email, password }),
-      headers: { "Content-Type": "text/html" },
+      // headers: { "Content-Type": "text/html" },
     });
 
     console.log("Login Input: " + response);
@@ -35,7 +35,7 @@ const signupFormHandler = async (event) => {
     const response = await fetch("/api/users", {
       method: "POST",
       body: JSON.stringify({ name, email, password }),
-      headers: { "Content-Type": "text/html" },
+      // headers: { "Content-Type": "text/html" },
     });
 
     console.log("Signup Input: " + response);
