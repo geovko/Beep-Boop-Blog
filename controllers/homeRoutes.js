@@ -2,24 +2,6 @@ const router = require("express").Router();
 const { Post, User } = require("../models");
 const withAuth = require("../utils/auth");
 
-router.get("/", async (req, res) => {
-  try {
-    // Get all posts, sorted by name
-    const postData = await Post.findAll({
-      attributes: { exclude: ["password"] },
-      order: [["title", "ASC"]],
-    });
-
-    // Serialize data
-    const posts = postData.map((comment) => comment.get({ plain: true }));
-
-    // Pass serialized data into Handlebars.js template
-    res.render("homepage", { posts });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
 router.get("/posts/:id", async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
@@ -70,6 +52,24 @@ router.get("/login", (req, res) => {
   }
 
   res.render("login");
+});
+
+router.get("/*", async (req, res) => {
+  try {
+    // Get all posts, sorted by name
+    const postData = await Post.findAll({
+      attributes: { exclude: ["password"] },
+      order: [["title", "ASC"]],
+    });
+
+    // Serialize data
+    const posts = postData.map((comment) => comment.get({ plain: true }));
+
+    // Pass serialized data into Handlebars.js template
+    res.render("homepage", { posts });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;
