@@ -52,6 +52,8 @@ router.post("/:id", withAuth, async (req, res) => {
       dateCreated: `${now[1]} ${now[2]}, ${now[3]}`,
     });
 
+    console.log(newComment);
+
     res.status(200).json(newComment);
   } catch (err) {
     res.status(400).json(err);
