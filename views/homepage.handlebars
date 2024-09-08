@@ -18,10 +18,10 @@
       </h3>
       {{#each comments}}
         <div class="col-md-7">
-          <p> {{content}}</p>
+          <p> {{content}}</p><p>{{user.name}} - {{dateCreated}}</p>
         </div>
         <div>
-          <p>{{user.name}} - {{dateCreated}}</p>
+
         </div>
       {{/each}}
     </div>
