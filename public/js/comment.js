@@ -19,8 +19,8 @@ const commentFormHandler = async (event) => {
       console.log(response);
 
       if (response.ok) {
-        // If successful, redirect the browser to the profile page
-        document.location.replace("/dashboard");
+        // If successful, refresh the page
+        document.location.replace("/singlePost");
       } else {
         alert(response.statusText);
       }

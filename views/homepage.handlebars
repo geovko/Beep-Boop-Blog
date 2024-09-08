@@ -3,8 +3,8 @@
   <div class="row mb-4 post">
     <div class="col-md-5">
       <h2><a href="/posts/{{post.id}}">{{post.title}}</a></h2>
-      <p>{{post.content}}</p>
-      <p>{{post.user.name}} - {{dateCreated}}</p>
+      <p>{{content}}</p>
+      <p>{{user.name}} - {{dateCreated}}</p>
     </div>
     <div>
       <h3>
@@ -12,10 +12,10 @@
       </h3>
       {{#each comment}}
         <div class="col-md-7">
-          <p> {{comment.content}}</p>
+          <p> {{content}}</p>
         </div>
         <div>
-          <p>{{comment.user.name}} - {{dateCreated}}</p>
+          <p>{{user.name}} - {{dateCreated}}</p>
         </div>
       {{/each}}
     </div>
