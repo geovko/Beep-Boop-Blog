@@ -4,13 +4,13 @@
     <div class="col-md-5">
       <h2><a href="/posts/{{post.id}}">{{post.title}}</a></h2>
       <p>{{content}}</p>
-      <p>{{user.name}} - {{dateCreated}}</p>
+      <p>{{user_id}} {{user.name}} - {{dateCreated}}</p>
     </div>
     <div>
       <h3>
         Comments:
       </h3>
-      {{#each comment}}
+      {{#each comments}}
         <div class="col-md-7">
           <p> {{content}}</p>
         </div>
