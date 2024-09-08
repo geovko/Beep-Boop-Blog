@@ -5,6 +5,7 @@
       <h2><a href="/posts/{{post.id}}">{{post.title}}</a></h2>
       <p>{{content}}</p>
       <p>{{user_id}}
+        {{post}}
         1{{user_id.name}}
         2{{user_id.user}}
         3{{name}}
@@ -15,7 +16,7 @@
       <h3>
         Comments:
       </h3>
-      {{#each comment}}
+      {{#each comments}}
         <div class="col-md-7">
           <p> {{content}}</p>
         </div>
