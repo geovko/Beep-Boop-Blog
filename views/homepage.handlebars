@@ -4,7 +4,12 @@
     <div class="col-md-5">
       <h2><a href="/posts/{{post.id}}">{{post.title}}</a></h2>
       <p>{{content}}</p>
-      <p>{{user_id}} {{user_id.name}} - {{dateCreated}}</p>
+      <p>{{user_id}}
+        1{{user}}
+        2{{post.user}}
+        3{{post.user.name}}
+        -
+        {{dateCreated}}</p>
     </div>
     <div>
       <h3>
