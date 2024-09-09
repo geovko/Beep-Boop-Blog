@@ -7,7 +7,9 @@ const withAuth = require("../../utils/auth");
 // GET all comments
 router.get("/", async (req, res) => {
   try {
-    const commentData = await Comment.findAll({});
+    const commentData = await Comment.findAll({
+      include: [{ model: User }],
+    });
     res.status(200).json(commentData);
   } catch (err) {
     res.status(500).json(err);
@@ -43,7 +45,7 @@ router.post("/:id", withAuth, async (req, res) => {
   try {
     const newComment = await Comment.create({
       ...req.body,
-      creator: req.session.name,
+      user_id: req.session.user_id,
       post_id: req.params.id,
       dateCreated: `${now[1]} ${now[2]}, ${now[3]}`,
     });
@@ -62,7 +64,7 @@ router.delete("/:id", withAuth, async (req, res) => {
     const commentData = await Comment.destroy({
       where: {
         id: req.params.id,
-        creator: req.session.name,
+        user_id: req.session.user_id,
       },
     });
 
