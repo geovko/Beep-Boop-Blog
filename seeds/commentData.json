@@ -3,30 +3,30 @@
     "content": "That's so metal.",
     "dateCreated": "Oct 31, 2020",
     "post_id": 1,
-    "user_id": 2
+    "creator": "Bob"
   },
   {
     "content": "Bloop blip!",
     "dateCreated": "Jan 1, 2023",
     "post_id": 3,
-    "user_id": 1
+    "creator": "Sally"
   },
   {
     "content": "What is happening in this post...???",
     "dateCreated": "July 31, 2022",
     "post_id": 3,
-    "user_id": 2
+    "creator": "Bob"
   },
   {
     "content": "Ah. To feel these emotions once again... <3 <3",
     "dateCreated": "Oct 31, 2023",
     "post_id": 1,
-    "user_id": 3
+    "creator": "Axolotlotl"
   },
   {
     "content": "Bloop bloop.",
     "dateCreated": "June 27, 2024",
     "post_id": 5,
-    "user_id": 1
+    "creator": "Sally"
   }
 ]
