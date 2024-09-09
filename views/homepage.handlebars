@@ -4,21 +4,19 @@
     <div class="col-md-5">
       <h2><a href="/posts/{{post.id}}">{{post.title}}</a></h2>
       <p>{{content}}</p>
-      <p>{{user_id}}
-        {{post}}
-        1{{user_id.name}}
-        2{{user_id.user}}
-        3{{name}}
+      <p>{{user.name}}
         -
         {{dateCreated}}</p>
     </div>
     <div>
-      <h3>
+      {{! <h3>
         Comments:
-      </h3>
-      {{#each comments}}
+      </h3> }}
+      {{#each comments as |comment|}}
         <div class="col-md-7">
-          <p> {{content}}</p><p>{{user.name}} - {{dateCreated}}</p>
+          <p>Comment: {{content}}</p><p>1:{{comment.creator}}, 2:{{creator}}
+            -
+            {{dateCreated}}</p>
         </div>
         <div>
 
