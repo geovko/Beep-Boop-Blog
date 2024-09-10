@@ -4,6 +4,9 @@ const commentFormHandler = async (event) => {
   // Collect values from the login form
   const content = document.querySelector("#comment-content").value.trim();
   console.log(content);
+
+  console.log(event.target);
+
   if (content) {
     // Send a POST request to the API endpoint
     if (event.target.hasAttribute("data-id")) {
