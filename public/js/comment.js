@@ -4,7 +4,7 @@ const commentFormHandler = async (event) => {
   // Collect values from the login form
   const content = document.querySelector("#comment-content").value.trim();
 
-  if (email && password) {
+  if (content) {
     // Send a POST request to the API endpoint
     if (event.target.hasAttribute("data-id")) {
       const id = event.target.getAttribute("data-id");
@@ -20,7 +20,7 @@ const commentFormHandler = async (event) => {
 
       if (response.ok) {
         // If successful, refresh the page
-        document.location.replace("/singlePost");
+        document.location.replace("/dashboard");
       } else {
         alert(response.statusText);
       }
