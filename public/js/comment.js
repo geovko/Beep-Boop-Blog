@@ -5,7 +5,7 @@ const commentFormHandler = async (event) => {
   const content = document.querySelector("#comment-content").value.trim();
   console.log(content);
 
-  console.log(event.target);
+  console.log(event.target.hasAttribute("data-id"));
 
   if (content) {
     // Send a POST request to the API endpoint
@@ -33,4 +33,4 @@ const commentFormHandler = async (event) => {
 
 document
   .querySelector(".new-comment-form")
-  .addEventListener("submit", commentFormHandler);
+  .addEventListener("Submit!", commentFormHandler);
