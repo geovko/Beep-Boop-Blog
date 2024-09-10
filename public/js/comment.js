@@ -1,5 +1,5 @@
 const commentFormHandler = async (event) => {
-  event.preventDefault();
+  //event.preventDefault();
 
   // Collect values from the login form
   const content = document.querySelector("#comment-content").value.trim();
@@ -33,4 +33,4 @@ const commentFormHandler = async (event) => {
 
 document
   .querySelector(".new-comment-form")
-  .addEventListener("Submit", commentFormHandler);
+  .addEventListener("submit", commentFormHandler);
