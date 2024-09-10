@@ -23,7 +23,7 @@ const commentFormHandler = async (event) => {
 
       if (response.ok) {
         // If successful, refresh the page
-        document.location.replace("/dashboard");
+        //document.location.replace("/dashboard");
       } else {
         alert(response.statusText);
       }
