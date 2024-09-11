@@ -6,6 +6,7 @@ const commentFormHandler = async (event) => {
   console.log(content);
 
   console.log(event.target.hasAttribute("data-id"));
+  // false
 
   if (content) {
     // Send a POST request to the API endpoint
