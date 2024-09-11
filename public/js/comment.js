@@ -3,28 +3,23 @@ const commentFormHandler = async (event) => {
 
   // Collect values from the login form
   const content = document.querySelector("#comment-content").value.trim();
-  console.log(content);
 
-  console.log(event.target.hasAttribute("data-id"));
-  // false
+  const btnId = event.target.querySelector(`button[type="submit"]`);
 
   if (content) {
     // Send a POST request to the API endpoint
-    if (event.target.hasAttribute("data-id")) {
-      const id = event.target.getAttribute("data-id");
-      console.log("Comment being created");
+    if (btnId.hasAttribute("data-id")) {
+      const id = btnId.getAttribute("data-id");
+
       const response = await fetch(`/api/comments/${id}`, {
         method: "POST",
         body: JSON.stringify({ content }),
         headers: { "Content-Type": "application/json" },
       });
 
-      console.log("Comment Input:");
-      console.log(response);
-
       if (response.ok) {
         // If successful, refresh the page
-        document.location.replace("/dashboard");
+        document.location.replace(`/posts/${id}`);
       } else {
         alert(response.statusText);
       }
