@@ -12,9 +12,16 @@ router.get("/posts/:id", async (req, res) => {
         },
         {
           model: Comment,
-          attributes: ["content", "dateCreated", "user_id"],
+          attributes: ["content", "dateCreated"],
+          include: [
+            {
+              mode: User,
+              attributes: ["name"],
+            },
+          ],
         },
       ],
+      prder: [["title", "ASC"]],
     });
 
     const post = postData.get({ plain: true });
