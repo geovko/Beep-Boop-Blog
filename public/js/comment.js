@@ -1,5 +1,5 @@
 const commentFormHandler = async (event) => {
-  //event.preventDefault();
+  event.preventDefault();
 
   // Collect values from the login form
   const content = document.querySelector("#comment-content").value.trim();
@@ -24,7 +24,7 @@ const commentFormHandler = async (event) => {
 
       if (response.ok) {
         // If successful, refresh the page
-        //document.location.replace("/dashboard");
+        document.location.replace("/dashboard");
       } else {
         alert(response.statusText);
       }
