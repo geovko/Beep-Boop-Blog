@@ -2,15 +2,17 @@
   <h2>{{title}}</h2>
   <p>{{content}}</p>
   <p>{{user.name}} - {{dateCreated}}</p>
-  <h2>1: {{comments}}, 2: {{comment}}, 3: {{comment.content}}</h2>
+  <p>+_+_+_+_+_+_+_+_+_+</p>
 </div>
 
 {{#each comments as |comment|}}
   <div class="text-center">
     <div class="col-md-7">
       <p> {{comment.content}}</p>
+      <p> {{content}}</p>
     </div>
-    <p>{{user.name}} - {{dateCreated}}</p>
+    <p>{{comment.user_id.name}} - {{dateCreated}}</p>
+    <p>{{comment.user_id}}</p>
   </div>
 {{/each}}
 
