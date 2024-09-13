@@ -20,7 +20,7 @@ const loginFormHandler = async (event) => {
       // If successful, redirect the browser to the profile page
       document.location.replace("/dashboard");
     } else {
-      alert(response.statusText);
+      alert("Please enter the correct email or password.");
     }
   }
 };
